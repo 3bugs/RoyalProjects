@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".fragment.InfoFragment"
+    tools:ignore="HardcodedText,UnusedAttribute">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/info_image_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintDimensionRatio="w,5:8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/info_image_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/info_01_w800"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/marker_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/ic_marker"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_image_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <Button
+                android:id="@+id/info_button_01"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="จุดลงทะเบียน"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_02"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="ห้องประชุม"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_03"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="อาคารนิทรรศการ"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_04"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="ศาลาท่าตะบูน"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_05"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="หอชะคราม"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_06"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="ศาลาท่าน้ำ"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_07"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="ลานโพธิ์"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+            <Button
+                android:id="@+id/info_button_จุดจอดรถ"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_info_patch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="จุดจอดรถ"
+                android:textSize="26sp"
+                app:fontFamily="@font/sp_suan_dusit_bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/info_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_image_container" />
+</androidx.constraintlayout.widget.ConstraintLayout>
