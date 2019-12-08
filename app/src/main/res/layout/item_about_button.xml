@@ -16,6 +16,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:padding="4dp"
         android:textSize="26sp"
+        android:visibility="gone"
         app:fontFamily="@font/sp_suan_dusit_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,5 +24,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="UnusedAttribute"
         tools:text="จุดลงทะเบียน" />
+
+    <ImageView
+        android:id="@+id/about_image_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_about"
+        tools:ignore="ContentDescription,UnusedAttribute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

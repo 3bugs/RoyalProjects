@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73110e03-2de3-4709-8ce2-f2915bba533e" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="73110e03-2de3-4709-8ce2-f2915bba533e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ic_loading4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ic_no_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ic_no_image_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/db_config.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/foot.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/foot_php.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/footer.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/head.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/head_php.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/header.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/sidebar.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/place.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/place_add_edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/th/ac/dusit/dbizcom/royalprojects/fragment/ProjectDetailsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/th/ac/dusit/dbizcom/royalprojects/fragment/ProjectDetailsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_project_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_project_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/global.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/global.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +36,30 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1SashgcNfx8iZVEA7tjGfESTrjT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../2fellows/ICEHR/app/frontend" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -28,18 +71,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/api" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -56,10 +100,40 @@
       <workItem from="1571813163086" duration="2037000" />
       <workItem from="1573394581527" duration="617000" />
       <workItem from="1573440836208" duration="40000" />
+      <workItem from="1573552276236" duration="9503000" />
+      <workItem from="1573619091731" duration="2816000" />
+      <workItem from="1573629570399" duration="188000" />
+      <workItem from="1573630254760" duration="618000" />
+      <workItem from="1574349299217" duration="2150000" />
+      <workItem from="1574478348537" duration="76000" />
+      <workItem from="1574478442576" duration="603000" />
+      <workItem from="1574657743476" duration="599000" />
+      <workItem from="1574754230268" duration="948000" />
+      <workItem from="1575264648844" duration="2045000" />
+      <workItem from="1575538602376" duration="4371000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="503" y="141" key="FileChooserDialogImpl" timestamp="1575439097537">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="503" y="141" key="FileChooserDialogImpl/1366.0.1920.1080/65.24.1301.744@65.24.1301.744" timestamp="1575439097537" />
   </component>
 </project>

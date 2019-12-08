@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="พระบาทสมเด็จพระปรมินทรมหาภูมิพลอดุลยเดช"
+        android:text="จังหวัดประจวบคีรีขันธ์"
         android:textColor="@color/colorAccent"
         android:textSize="28sp"
         app:fontFamily="@font/sp_suan_dusit_bold"

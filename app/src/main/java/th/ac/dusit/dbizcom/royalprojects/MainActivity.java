@@ -2,6 +2,7 @@ package th.ac.dusit.dbizcom.royalprojects;
 
 import android.os.Bundle;
 
+import th.ac.dusit.dbizcom.royalprojects.fragment.AboutFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.DeveloperFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.InfoFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.ProjectDetailsFragment;
@@ -12,6 +13,7 @@ public class MainActivity extends BaseActivity implements
         ProjectListFragment.ProjectListFragmentListener,
         ProjectDetailsFragment.ProjectDetailsFragmentListener,
         InfoFragment.InfoFragmentListener,
+        AboutFragment.AboutFragmentListener,
         DeveloperFragment.DeveloperFragmentListener {
 
     private static final String TAG_PROJECT_LIST_FRAGMENT = "project_list_fragment";
@@ -34,6 +36,11 @@ public class MainActivity extends BaseActivity implements
 
     @Override
     public void onClickAboutButton() {
+        loadFragment(new AboutFragment(), TAG_DEVELOPER_FRAGMENT, true, FragmentTransitionType.SLIDE);
+    }
+
+    @Override
+    public void onClickDeveloper() {
         loadFragment(new DeveloperFragment(), TAG_DEVELOPER_FRAGMENT, true, FragmentTransitionType.SLIDE);
     }
 

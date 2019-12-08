@@ -16,14 +16,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
+import com.asura.library.posters.Poster;
+import com.asura.library.posters.RemoteImage;
+import com.asura.library.posters.RemoteVideo;
+import com.asura.library.views.PosterSlider;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.glide.slider.library.SliderLayout;
-import com.glide.slider.library.animations.DescriptionAnimation;
-import com.glide.slider.library.slidertypes.DefaultSliderView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import th.ac.dusit.dbizcom.royalprojects.R;
@@ -74,15 +75,17 @@ public class ProjectDetailsFragment extends Fragment {
 
         ImageView projectImageView = view.findViewById(R.id.project_image_view);
 
-        CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(view.getContext());
-        circularProgressDrawable.setStrokeWidth(5f);
-        circularProgressDrawable.setCenterRadius(30f);
-        circularProgressDrawable.start();
+        if (mProject.coverImage != null) {
+            CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(view.getContext());
+            circularProgressDrawable.setStrokeWidth(5f);
+            circularProgressDrawable.setCenterRadius(30f);
+            circularProgressDrawable.start();
 
-        Glide.with(view.getContext())
-                .load(ApiClient.IMAGE_BASE_URL.concat(mProject.coverImage))
-                .placeholder(circularProgressDrawable)
-                .into(projectImageView);
+            Glide.with(view.getContext())
+                    .load(ApiClient.IMAGE_BASE_URL.concat(mProject.coverImage))
+                    .placeholder(circularProgressDrawable)
+                    .into(projectImageView);
+        }
 
         TextView detailsTextView = view.findViewById(R.id.details_text_view);
         detailsTextView.setText(mProject.details);
@@ -121,15 +124,39 @@ public class ProjectDetailsFragment extends Fragment {
         });
 
         //setupImageSlider(view);
+        setupPosterSlider(view);
     }
 
-    private void setupImageSlider(View view) {
+    private void setupPosterSlider(View view) {
+        PosterSlider posterSlider = view.findViewById(R.id.poster_slider);
+        List<Poster> posters = new ArrayList<>();
+
+        //add poster using remote url
+        posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_01.jpg"));
+        posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_02.jpg"));
+        posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_03.jpg"));
+        //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_04.jpg"));
+        //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_05.jpg"));
+
+        //add poster using resource drawable
+        //posters.add(new DrawableImager(R.drawable.yourDrawable));
+
+        //add raw video using raw resource file
+        //posters.add(new RawVideo(R.raw.yourRawFile));
+
+        //add remote video using uri
+        posters.add(new RemoteVideo(Uri.parse("http://5911011802043.msci.dusit.ac.th/royal_projects/video/3.mp4")));
+
+        posterSlider.setPosters(posters);
+    }
+
+    /*private void setupImageSlider(View view) {
         SliderLayout mSlider = view.findViewById(R.id.slider);
 
         ArrayList<String> listUrl = new ArrayList<>();
-        /*listUrl.add("http://5911011802058.msci.dusit.ac.th/chainat_tourism/images/โฆษณา.png");
-        listUrl.add("http://5911011802058.msci.dusit.ac.th/chainat_tourism/images/สวนนก.png");
-        listUrl.add("http://5911011802058.msci.dusit.ac.th/chainat_tourism/images/สวนส้มโอ.png");*/
+        //listUrl.add("http://5911011802058.msci.dusit.ac.th/chainat_tourism/images/โฆษณา.png");
+        //listUrl.add("http://5911011802058.msci.dusit.ac.th/chainat_tourism/images/สวนนก.png");
+        //listUrl.add("http://5911011802058.msci.dusit.ac.th/chainat_tourism/images/สวนส้มโอ.png");
 
         RequestOptions requestOptions = new RequestOptions().fitCenter();
 
@@ -160,7 +187,7 @@ public class ProjectDetailsFragment extends Fragment {
         mSlider.setCustomAnimation(new DescriptionAnimation());
         mSlider.setDuration(3000);
         mSlider.addOnPageChangeListener(null);
-    }
+    }*/
 
     @Override
     public void onAttach(Context context) {

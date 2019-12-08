@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,33 +13,41 @@ import androidx.fragment.app.Fragment;
 
 import th.ac.dusit.dbizcom.royalprojects.R;
 
-public class DeveloperFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
-    private DeveloperFragmentListener mListener;
+    private AboutFragmentListener mListener;
 
-    public DeveloperFragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_developer, container, false);
+        return inflater.inflate(R.layout.fragment_about, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ImageView developerImageView = view.findViewById(R.id.developer_image_view);
+        developerImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onClickDeveloper();
+            }
+        });
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof DeveloperFragmentListener) {
-            mListener = (DeveloperFragmentListener) context;
+        if (context instanceof AboutFragmentListener) {
+            mListener = (AboutFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement DeveloperFragmentListener");
+                    + " must implement AboutFragmentListener");
         }
     }
 
@@ -48,6 +57,7 @@ public class DeveloperFragment extends Fragment {
         mListener = null;
     }
 
-    public interface DeveloperFragmentListener {
+    public interface AboutFragmentListener {
+        void onClickDeveloper();
     }
 }

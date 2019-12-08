@@ -44,12 +44,33 @@
         android:padding="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/cover_01"
+        android:visibility="gone"
         app:layout_constraintDimensionRatio="w,2:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/project_name_text_view" />
 
-    <com.glide.slider.library.SliderLayout
+    <com.asura.library.views.PosterSlider
+        android:id="@+id/poster_slider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="#aaffffff"
+        android:padding="8dp"
+        app:defaultIndicator="circle"
+        app:hideIndicators="true"
+        app:imageSlideInterval="5000"
+        app:layout_constraintDimensionRatio="w,2:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/project_name_text_view"
+        app:loopSlides="true" />
+
+    <!--<com.glide.slider.library.SliderLayout
         android:id="@+id/slider"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -65,7 +86,7 @@
         app:layout_constraintDimensionRatio="w,2:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/project_name_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/project_name_text_view" />-->
 
     <TextView
         android:id="@+id/opening_time_text_view"
@@ -97,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/opening_time_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/project_image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/poster_slider" />
 
     <ScrollView
         android:id="@+id/details_scroll_view"

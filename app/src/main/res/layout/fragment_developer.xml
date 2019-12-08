@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".fragment.DeveloperFragment">
-
+    tools:context=".fragment.DeveloperFragment"
+    tools:ignore="ContentDescription,HardcodedText">
 
     <ImageView
         android:id="@+id/imageView"

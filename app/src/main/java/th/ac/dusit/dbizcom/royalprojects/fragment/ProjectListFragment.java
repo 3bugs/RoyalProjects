@@ -21,11 +21,13 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import th.ac.dusit.dbizcom.royalprojects.R;
+import th.ac.dusit.dbizcom.royalprojects.etc.Utils;
 import th.ac.dusit.dbizcom.royalprojects.model.Project;
 import th.ac.dusit.dbizcom.royalprojects.net.ApiClient;
 import th.ac.dusit.dbizcom.royalprojects.net.GetProjectResponse;
@@ -43,7 +45,7 @@ public class ProjectListFragment extends Fragment {
     public ProjectListFragment() {
         // Required empty public constructor
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,10 +60,60 @@ public class ProjectListFragment extends Fragment {
         mProgressView = view.findViewById(R.id.progress_view);
 
         if (mProjectList == null) {
-            doGetProject();
+            doGetProjectOffline();
         } else {
             setupRecyclerView();
         }
+    }
+
+    private void doGetProjectOffline() {
+        mProjectList = new ArrayList<>();
+        mProjectList.add(new Project(
+                1, "โครงการพระราชดำริ 1", "ที่อยู่ 1",
+                "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด ",
+                "081-234-5678", "8.00 - 18.00 น.", 13.7563, 100.5018, null, null
+        ));
+        mProjectList.add(new Project(
+                2, "โครงการพระราชดำริ 2", "ที่อยู่ 2",
+                "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด ",
+                "081-234-5678", "8.00 - 18.00 น.", 13.7563, 100.5018, null, null
+        ));
+        mProjectList.add(new Project(
+                3, "โครงการพระราชดำริ 3", "ที่อยู่ 3",
+                "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด ",
+                "081-234-5678", "8.00 - 18.00 น.", 13.7563, 100.5018, null, null
+        ));
+        mProjectList.add(new Project(
+                4, "โครงการพระราชดำริ 4", "ที่อยู่ 4",
+                "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด "
+                        + "รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด รายละเอียด ",
+                "081-234-5678", "8.00 - 18.00 น.", 13.7563, 100.5018, null, null
+        ));
+
+        setupRecyclerView();
     }
 
     private void doGetProject() {
@@ -84,6 +136,12 @@ public class ProjectListFragment extends Fragment {
 
                     @Override
                     public void onError(String errorMessage) {
+                        Utils.showOkDialog(
+                                getActivity(),
+                                "Error",
+                                errorMessage,
+                                null
+                        );
                     }
                 }
         ));
@@ -121,6 +179,7 @@ public class ProjectListFragment extends Fragment {
 
     public interface ProjectListFragmentListener {
         void onClickProject(Project Project);
+
         void onClickAboutButton();
     }
 
@@ -172,15 +231,17 @@ public class ProjectListFragment extends Fragment {
                 holder.mProject = project;
                 holder.mNameTextView.setText(project.name);
 
-                CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(mContext);
-                circularProgressDrawable.setStrokeWidth(5f);
-                circularProgressDrawable.setCenterRadius(30f);
-                circularProgressDrawable.start();
+                if (project.coverImage != null) {
+                    CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(mContext);
+                    circularProgressDrawable.setStrokeWidth(5f);
+                    circularProgressDrawable.setCenterRadius(30f);
+                    circularProgressDrawable.start();
 
-                Glide.with(mContext)
-                        .load(ApiClient.IMAGE_BASE_URL.concat(project.coverImage))
-                        .placeholder(circularProgressDrawable)
-                        .into(holder.mProjectImageView);
+                    Glide.with(mContext)
+                            .load(ApiClient.IMAGE_BASE_URL.concat(project.coverImage))
+                            .placeholder(circularProgressDrawable)
+                            .into(holder.mProjectImageView);
+                }
             }
         }
 
@@ -223,6 +284,7 @@ public class ProjectListFragment extends Fragment {
 
             private final View mRootView;
             private final Button mButton;
+            private final ImageView mImageView;
 
             AboutButtonViewHolder(View itemView) {
                 super(itemView);
@@ -232,6 +294,13 @@ public class ProjectListFragment extends Fragment {
                 mButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        mListener.onClickAboutButton();
+                    }
+                });
+                mImageView = itemView.findViewById(R.id.about_image_view);
+                mImageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
                         mListener.onClickAboutButton();
                     }
                 });
