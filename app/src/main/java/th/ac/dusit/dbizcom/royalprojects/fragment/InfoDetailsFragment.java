@@ -68,16 +68,19 @@ public class InfoDetailsFragment extends Fragment {
         titleTextView.setText(mInfoMarker.name);
         detailsTextView.setText(mInfoMarker.details);
 
-        if (getActivity() != null
-                && mInfoMarker.imageFileName != null
-                && !("".equals(mInfoMarker.imageFileName))) {
-            AssetManager am = getActivity().getAssets();
-            try {
-                InputStream stream = am.open(mInfoMarker.imageFileName);
-                Drawable drawable = Drawable.createFromStream(stream, null);
-                imageView.setImageDrawable(drawable);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if (getActivity() != null) {
+            if (mInfoMarker.imageFileName != null
+                    && !("".equals(mInfoMarker.imageFileName))) {
+                AssetManager am = getActivity().getAssets();
+                try {
+                    InputStream stream = am.open(mInfoMarker.imageFileName);
+                    Drawable drawable = Drawable.createFromStream(stream, null);
+                    imageView.setImageDrawable(drawable);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                imageView.setVisibility(View.GONE);
             }
         }
     }
