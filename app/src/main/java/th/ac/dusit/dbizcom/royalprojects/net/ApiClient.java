@@ -14,6 +14,7 @@ public class ApiClient {
     private static final String BASE_URL = "http://5911011802043.msci.dusit.ac.th/royal_projects/";
     private static final String API_BASE_URL = BASE_URL + "api/api.php/";
     public static final String IMAGE_BASE_URL = BASE_URL + "images/";
+    public static final String GALLERY_BASE_URL = IMAGE_BASE_URL + "gallery/";
 
     private static Retrofit retrofit = null;
 

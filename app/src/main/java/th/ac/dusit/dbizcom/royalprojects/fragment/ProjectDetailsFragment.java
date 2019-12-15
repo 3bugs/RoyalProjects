@@ -132,11 +132,15 @@ public class ProjectDetailsFragment extends Fragment {
         List<Poster> posters = new ArrayList<>();
 
         //add poster using remote url
-        posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_01.jpg"));
-        posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_02.jpg"));
-        posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_03.jpg"));
+        //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_01.jpg"));
+        //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_02.jpg"));
+        //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_03.jpg"));
         //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_04.jpg"));
         //posters.add(new RemoteImage("http://5911011802043.msci.dusit.ac.th/royal_projects/images/cover_05.jpg"));
+
+        for (String imageFile : mProject.galleryImages) {
+            posters.add(new RemoteImage(ApiClient.GALLERY_BASE_URL.concat(imageFile)));
+        }
 
         //add poster using resource drawable
         //posters.add(new DrawableImager(R.drawable.yourDrawable));
@@ -145,7 +149,27 @@ public class ProjectDetailsFragment extends Fragment {
         //posters.add(new RawVideo(R.raw.yourRawFile));
 
         //add remote video using uri
-        posters.add(new RemoteVideo(Uri.parse("http://5911011802043.msci.dusit.ac.th/royal_projects/video/3.mp4")));
+        String videoFile = null;
+        switch (mProject.id) {
+            case 1:
+                videoFile = "1.mp4";
+                break;
+            case 2:
+                videoFile = "2.mp4";
+                break;
+            case 3:
+                videoFile = "3.mp4";
+                break;
+            case 4:
+                videoFile = "4.mp4";
+                break;
+            case 5:
+                videoFile = "5.mp4";
+                break;
+        }
+        if (videoFile != null) {
+            posters.add(new RemoteVideo(Uri.parse("http://5911011802043.msci.dusit.ac.th/royal_projects/video/".concat(videoFile))));
+        }
 
         posterSlider.setPosters(posters);
     }

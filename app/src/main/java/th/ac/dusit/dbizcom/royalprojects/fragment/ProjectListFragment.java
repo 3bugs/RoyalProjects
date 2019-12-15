@@ -60,7 +60,7 @@ public class ProjectListFragment extends Fragment {
         mProgressView = view.findViewById(R.id.progress_view);
 
         if (mProjectList == null) {
-            doGetProjectOffline();
+            doGetProject();
         } else {
             setupRecyclerView();
         }

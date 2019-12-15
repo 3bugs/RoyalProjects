@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import th.ac.dusit.dbizcom.royalprojects.fragment.AboutFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.DeveloperFragment;
+import th.ac.dusit.dbizcom.royalprojects.fragment.InfoDetailsFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.InfoFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.ProjectDetailsFragment;
 import th.ac.dusit.dbizcom.royalprojects.fragment.ProjectListFragment;
+import th.ac.dusit.dbizcom.royalprojects.fragment.ReferenceFragment;
+import th.ac.dusit.dbizcom.royalprojects.model.InfoMarker;
 import th.ac.dusit.dbizcom.royalprojects.model.Project;
 
 public class MainActivity extends BaseActivity implements
@@ -14,12 +17,16 @@ public class MainActivity extends BaseActivity implements
         ProjectDetailsFragment.ProjectDetailsFragmentListener,
         InfoFragment.InfoFragmentListener,
         AboutFragment.AboutFragmentListener,
-        DeveloperFragment.DeveloperFragmentListener {
+        DeveloperFragment.DeveloperFragmentListener,
+        ReferenceFragment.ReferenceFragmentListener,
+        InfoDetailsFragment.InfoDetailsFragmentListener {
 
     private static final String TAG_PROJECT_LIST_FRAGMENT = "project_list_fragment";
     private static final String TAG_PROJECT_DETAILS_FRAGMENT = "project_details_fragment";
     private static final String TAG_INFO_FRAGMENT = "info_fragment";
+    private static final String TAG_INFO_DETAILS_FRAGMENT = "info_fragment";
     private static final String TAG_DEVELOPER_FRAGMENT = "developer_fragment";
+    private static final String TAG_REFERENCE_FRAGMENT = "reference_fragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +52,17 @@ public class MainActivity extends BaseActivity implements
     }
 
     @Override
+    public void onClickReference() {
+        loadFragment(new ReferenceFragment(), TAG_REFERENCE_FRAGMENT, true, FragmentTransitionType.SLIDE);
+    }
+
+    @Override
     public void onClickInfoButton(int projectId) {
         loadFragment(InfoFragment.newInstance(projectId), TAG_INFO_FRAGMENT, true, FragmentTransitionType.SLIDE);
+    }
+
+    @Override
+    public void onClickInfoMarker(InfoMarker infoMarker) {
+        loadFragment(InfoDetailsFragment.newInstance(infoMarker), TAG_INFO_DETAILS_FRAGMENT, true, FragmentTransitionType.SLIDE);
     }
 }

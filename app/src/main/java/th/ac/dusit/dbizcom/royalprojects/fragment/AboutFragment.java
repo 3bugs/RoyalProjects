@@ -38,6 +38,13 @@ public class AboutFragment extends Fragment {
                 mListener.onClickDeveloper();
             }
         });
+        ImageView referenceImageView = view.findViewById(R.id.reference_image_view);
+        referenceImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onClickReference();
+            }
+        });
     }
 
     @Override
@@ -59,5 +66,6 @@ public class AboutFragment extends Fragment {
 
     public interface AboutFragmentListener {
         void onClickDeveloper();
+        void onClickReference();
     }
 }

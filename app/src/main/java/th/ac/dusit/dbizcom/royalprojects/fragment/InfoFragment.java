@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import th.ac.dusit.dbizcom.royalprojects.model.InfoMarker;
 
 public class InfoFragment extends Fragment {
 
+    private static final String TAG = InfoFragment.class.getName();
     private static final String ARG_PROJECT_ID = "project_id";
 
     private RecyclerView mRecyclerView;
@@ -85,153 +87,282 @@ public class InfoFragment extends Fragment {
                 mInfoImageView.setImageResource(R.drawable.info_01_w800);
 
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดลงทะเบียน", 0, 0
+                        "จุดลงทะเบียน",
+                        "(ยังไม่มีข้อมูล)",
+                        "สิรินาถ-จุดลงทะเบียน.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ห้องประชุม", 0, 0
+                        "ห้องประชุม",
+                        "(ยังไม่มีข้อมูล)",
+                        "สิรินาถ-ห้องประชุม.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "อาคารนิทรรศการ", 0, 0
+                        "อาคารนิทรรศการ",
+                        "(ยังไม่มีข้อมูล)",
+                        "สิรินาถ-อาคารนิทรรศการ.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ศาลาท่าตะบูน", 0, 0
+                        "ศาลาท่าตะบูน",
+                        "(ยังไม่มีข้อมูล)",
+                        "สิรินาถ-ศาลาท่าตะบูน.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "หอชะคราม", 0, 0
+                        "หอชะคราม",
+                        "(ยังไม่มีข้อมูล)",
+                        "สิรินาถ-หอชะคราม.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ศาลาท่าน้ำ", 0, 0
+                        "ศาลาท่าน้ำ",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ลานโพธิ์", 0, 0
+                        "ลานโพธิ์",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดจอดรถ", 0, 0
+                        "จุดจอดรถ",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 break;
             case 2:
                 mInfoImageView.setImageResource(R.drawable.info_02_w800);
 
                 mInfoMarkerList.add(new InfoMarker(
-                        "ศาลาป่าชายเลน", 0, 0
+                        "ศาลาป่าชายเลน",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "พลับพลาปล่อยปู", 0, 0
+                        "พลับพลาปล่อยปู",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ศาลาสืบพันธุ์ไม้ป่าชายเลน", 0, 0
+                        "ศาลาสืบพันธุ์ไม้ป่าชายเลน",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ศาลาธรรมชาติ", 0, 0
+                        "ศาลาธรรมชาติ",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ท่าเทียบเรือ", 0, 0
+                        "ท่าเทียบเรือ",
+                        "(ยังไม่มีข้อมูล)",
+                        "ปราณ-ท่าเทียบเรือ.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ทางเดินศึกษาธรรมชาติป่าบก", 0, 0
+                        "ทางเดินศึกษาธรรมชาติป่าบก",
+                        "(ยังไม่มีข้อมูล)",
+                        "ปราณ-ทางเดินธรรมชาติป่าบก.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ทุ่งโปร่งทอง", 0, 0
+                        "ทุ่งโปร่งทอง",
+                        "(ยังไม่มีข้อมูล)",
+                        "ปราณ-ทุ่งโปร่งทอง.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "หอชมเรือนยอดป่าชายเลน", 0, 0
+                        "หอชมเรือนยอดป่าชายเลน",
+                        "(ยังไม่มีข้อมูล)",
+                        "ปราณ-หอชมเรือนยอดป่าชายเลน.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ป่าตะกาล", 0, 0
+                        "ป่าตะกาล",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ศาลาปูดำ", 0, 0
+                        "ศาลาปูดำ",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 break;
             case 3:
                 mInfoImageView.setImageResource(R.drawable.info_03_w800);
 
                 mInfoMarkerList.add(new InfoMarker(
-                        "กองอำนวยการ", 0, 0
+                        "กองอำนวยการ",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดชมวิวอุทยาน", 0, 0
+                        "จุดชมวิวอุทยาน",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "พื้นที่ทำโป่งเทียม", 0, 0
+                        "พื้นที่ทำโป่งเทียม",
+                        "(ยังไม่มีข้อมูล)",
+                        "กุยบุรี-พื้นที่ทำโป่งเทียม.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดเพาะพันธุ์ต้นไม้", 0, 0
+                        "จุดเพาะพันธุ์ต้นไม้",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดกางเต็นท์", 0, 0
+                        "จุดกางเต็นท์",
+                        "(ยังไม่มีข้อมูล)",
+                        "กุยบุรี-จุดกางเต็นท์.jpg",
+                        0, 0
                 ));
                 break;
             case 4:
                 mInfoImageView.setImageResource(R.drawable.info_04_w800);
 
                 mInfoMarkerList.add(new InfoMarker(
-                        "สำนักงาน", 0, 0
+                        "สำนักงาน",
+                        "(ยังไม่มีข้อมูล)",
+                        "ชัยพัฒนา-สำนักงาน.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "สวนสมุนไพร", 0, 0
+                        "สวนสมุนไพร",
+                        "(ยังไม่มีข้อมูล)",
+                        "ชัยพัฒนา-สวนสมุนไพร.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดกางเต็นท์", 0, 0
+                        "จุดกางเต็นท์",
+                        "(ยังไม่มีข้อมูล)",
+                        "ชัยพัฒนา-จุดกางเต็นท์.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ซุ้มไม้เลื้อย", 0, 0
+                        "ซุ้มไม้เลื้อย",
+                        "(ยังไม่มีข้อมูล)",
+                        "ชัยพัฒนา-ซุ้มไม้เลื้อย.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "เรือนเพาะชำหญ้าแฝก", 0, 0
+                        "เรือนเพาะชำหญ้าแฝก",
+                        "(ยังไม่มีข้อมูล)",
+                        "ชัยพัฒนา-เรือนเพาะหญ้าแฝก.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ลานจอดรถ", 0, 0
+                        "ลานจอดรถ",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ฉก. ตำรวจพลร่ม", 0, 0
+                        "ฉก. ตำรวจพลร่ม",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "แปลงรวบรวมพันธุ์ไม้หายาก", 0, 0
+                        "แปลงรวบรวมพันธุ์ไม้หายาก",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "แปลงรวบรวมสายพันธุ์หญ้าแฝก", 0, 0
+                        "แปลงรวบรวมสายพันธุ์หญ้าแฝก",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "สวนพฤกษศาสตร์", 0, 0
+                        "สวนพฤกษศาสตร์",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "บ้านพักรับรอง", 0, 0
+                        "บ้านพักรับรอง",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "อ่างเก็บน้ำหญ้าแฝก", 0, 0
+                        "อ่างเก็บน้ำหญ้าแฝก",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 break;
             case 5:
                 mInfoImageView.setImageResource(R.drawable.info_05_w800);
 
                 mInfoMarkerList.add(new InfoMarker(
-                        "อ่างเก็บน้ำห้วยมงคล", 0, 0
+                        "อ่างเก็บน้ำห้วยมงคล",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดชมวิวอ่างเก็บน้ำห้วยมงคล", 0, 0
+                        "จุดชมวิวอ่างเก็บน้ำห้วยมงคล",
+                        "(ยังไม่มีข้อมูล)",
+                        "ห้วยมงคล-จุดชมวิว.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "ชลประทาน", 0, 0
+                        "ชลประทาน",
+                        "(ยังไม่มีข้อมูล)",
+                        "ห้วยมงคล-ชลประทาน.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "แปลงเกษตร", 0, 0
+                        "แปลงเกษตร",
+                        "(ยังไม่มีข้อมูล)",
+                        "",
+                        0, 0
                 ));
                 break;
             case 6:
                 mInfoImageView.setImageResource(R.drawable.info_06_w800);
 
                 mInfoMarkerList.add(new InfoMarker(
-                        "อ่างเก็บน้ำป่าละอู", 0, 0
+                        "อ่างเก็บน้ำป่าละอู",
+                        "อ่างเก็บน้ำป่าละอู",
+                        "ป่าละอู.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดชิมวิวอ่างเก็บน้ำป่าละอู", 0, 0
+                        "จุดชมวิวอ่างเก็บน้ำป่าละอู",
+                        "มีวิวชายเขา อากาศดี และเห็นวิวของอ่างเก็บน้ำป่าละอูได้รอบๆ มีวิวทิวทัศน์สวยงามตามธรรมชาติ มีน้ำตลอดปี และยังเหมาะแก่การดูพระอาทิตย์ขึ้น นับว่าเป็นทัศนียภาพที่สวยงามมาก",
+                        "ป่าละอู-จุดชมวิว.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "หน่วยพิทักษ์อุทยานแห่งชาติ", 0, 0
+                        "หน่วยพิทักษ์อุทยานแห่งชาติ",
+                        "ทำหน้าที่คุ้มครองและรักษาอุทยานแห่งชาติ อุทยานประจำรัฐหรือจังหวัด เขตรักษาพันธุ์สัตว์ป่า พื้นที่คุ้มครองทางธรรมชาติต่างๆ",
+                        "ป่าละอู-หน่วยพิทักษ์.jpg",
+                        0, 0
                 ));
                 mInfoMarkerList.add(new InfoMarker(
-                        "จุดกางเต็นท์", 0, 0
+                        "จุดกางเต็นท์",
+                        "เป็นจุดที่เอาไว้ให้นักเที่ยวเที่ยวที่มีจุดประสงค์ที่อยากจะกางเต็นท์ แคมป์ปิ้ง ที่อ่างเก็บน้ำป่าละอู",
+                        "ป่าละอู-จุดกางเต็นท์.jpg",
+                        0, 0
                 ));
                 break;
         }
@@ -269,6 +400,7 @@ public class InfoFragment extends Fragment {
     }
 
     public interface InfoFragmentListener {
+        void onClickInfoMarker(InfoMarker infoMarker);
     }
 
     private static class InfoAdapter extends RecyclerView.Adapter<InfoFragment.InfoAdapter.InfoViewHolder> {
@@ -297,7 +429,11 @@ public class InfoFragment extends Fragment {
             final InfoMarker infoMarker = mInfoMarkerList.get(position);
 
             holder.mInfoMarker = infoMarker;
-            holder.mInfoButton.setText(infoMarker.text);
+            holder.mInfoButton.setText(
+                    String.valueOf(position + 1)
+                            .concat(") ")
+                            .concat(infoMarker.name)
+            );
 
             /*holder.mNameTextView.setText(project.name);
 
@@ -330,12 +466,13 @@ public class InfoFragment extends Fragment {
                 mRootView = itemView;
                 mInfoButton = itemView.findViewById(R.id.info_button);
 
-                /*mRootView.setOnClickListener(new View.OnClickListener() {
+                mInfoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mListener.onClickProject(mInfoMarker);
+                        Log.i(TAG, mInfoMarker.name);
+                        mListener.onClickInfoMarker(mInfoMarker);
                     }
-                });*/
+                });
             }
         }
     }

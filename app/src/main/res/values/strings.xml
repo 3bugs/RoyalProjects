@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">โครงการอันเนื่องมาจากพระราชดำริ</string>
 
+    <string name="project_name_list">1. อ่างเก็บน้ำห้วยมงคล\n2. ศูนย์ปฏิบัติการจัดการที่ดินชัยพัฒนา-แม่ฟ้าหลวง\n3. อ่างเก็บน้ำป่าละอู\n4. วนอุทยานปราณบุรี\n5. ศูนย์ศึกษาเรียนรู้ระบบนิเวศป่าชายเลนสิรินาถราชินี\n6. โครงการอนุรักษ์และฟื้นฟูสภาพป่าบริเวณป่าสงวนแห่งชาติกุยบุรี</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
